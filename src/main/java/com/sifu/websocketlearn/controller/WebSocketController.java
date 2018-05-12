@@ -20,6 +20,12 @@ import org.springframework.stereotype.Controller;
 public class WebSocketController {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
+    /**
+     * 接收消息
+     *
+     * @param message
+     * @return
+     */
     @MessageMapping("/sendTest")
     @SendTo("/topic/subscribeTest")
     public ServerMessage sendDemo(ClientMessage message) {
@@ -27,6 +33,11 @@ public class WebSocketController {
         return new ServerMessage("你发送的消息为:" + message.getName());
     }
 
+    /**
+     * 消息订阅
+     *
+     * @return
+     */
     @SubscribeMapping("/subscribeTest")
     public ServerMessage sub() {
         logger.info("XXX用户订阅了我。。。");

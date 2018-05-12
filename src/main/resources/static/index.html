@@ -11,6 +11,7 @@ Welcome<br/><input id="text" type="text"/>
 <button onclick="subscribe1()">订阅消息/topic/subscribeTest</button>
 <hr/>
 <button onclick="closeWebSocket()">关闭WebSocket连接</button>
+<button onclick="toConnect()">重新WebSocket连接</button>
 <hr/>
 <div id="message"></div>
 </body>
@@ -40,6 +41,7 @@ Welcome<br/><input id="text" type="text"/>
             setMessageInnerHTML("连接失败");
         }
     );
+
 
     //发送消息
     function send() {
@@ -72,5 +74,12 @@ Welcome<br/><input id="text" type="text"/>
         document.getElementById('message').innerHTML += innerHTML + '<br/>';
     }
 
+    //关闭WebSocket连接
+    function closeWebSocket() {
+        alert(1)
+        stompClient.disconnect(function () {
+            alert("See you next time!");
+        });
+    }
 </script>
 </html>
