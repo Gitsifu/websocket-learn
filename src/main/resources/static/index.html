@@ -76,7 +76,6 @@ Welcome<br/><input id="text" type="text"/>
 
     //关闭WebSocket连接
     function closeWebSocket() {
-        alert(1)
         stompClient.disconnect(function () {
             alert("See you next time!");
         });
