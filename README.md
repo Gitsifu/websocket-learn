@@ -357,7 +357,7 @@ registry.setApplicationDestinationPrefixes("/app");
 <script src="https://cdn.bootcss.com/sockjs-client/1.1.4/sockjs.min.js"></script>
 ```
 ### 客户端发送和接收消息图解
-![](https://github.com/Gitsifu/websocket-learn/src/resources/static/img.png)
+![img](https://github.com/Gitsifu/websocket-learn/src/resources/static/img.png)
 
 服务器主动推数据
 
