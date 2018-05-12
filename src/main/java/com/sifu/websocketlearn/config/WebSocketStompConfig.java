@@ -35,6 +35,10 @@ public class WebSocketStompConfig extends AbstractWebSocketMessageBrokerConfigur
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
         // 订阅Broker名称
+        /* 用户订阅主题的前缀
+           /topic 代表发布广播，即群发
+           /queue 代表点对点，即发指定用户
+         */
         registry.enableSimpleBroker("/queue", "/topic");
         // 全局使用的消息前缀（客户端订阅路径上会体现出来）
         registry.setApplicationDestinationPrefixes("/app");
