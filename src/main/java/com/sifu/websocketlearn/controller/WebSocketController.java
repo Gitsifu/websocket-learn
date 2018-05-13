@@ -27,7 +27,7 @@ public class WebSocketController {
      * @return
      */
     @MessageMapping("/sendTest")
-    @SendTo("/topic/subscribeTest")
+    @SendTo("/topic/subscribeTest") //若没有此注解，且该方法有返回值，则原路返回，即返回的目的地地址为/topic/sendTest，经过消息代理，客户端需要订阅了这个主题才能收到返回消息
     public ServerMessage sendDemo(ClientMessage message) {
         logger.info("接收到了信息" + message.getName());
         return new ServerMessage("你发送的消息为:" + message.getName());
